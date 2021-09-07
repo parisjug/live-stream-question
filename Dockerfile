@@ -1,4 +1,4 @@
-FROM quay.io/eclipse/che-quarkus:7.35.2 as quarkus-dev
+FROM quay.io/quarkus/centos-quarkus-maven:20.1.0-java11 as quarkus-dev
 COPY --chown=1001:1001 . /live-stream-question
 WORKDIR /live-stream-question
 RUN  mvn package
