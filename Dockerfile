@@ -1,4 +1,4 @@
-FROM quay.io/eclipse/che-quarkus@sha256:d06ad1dae2ee06a292a4fc15cc30ca592decdd4ecb6d694f77742518a8825023 as quarkus-dev
+FROM quay.io/eclipse/che-quarkus:7.35.2 as quarkus-dev
 COPY --chown=1001:1001 . /live-stream-question
 WORKDIR /live-stream-question
 RUN  mvn package
