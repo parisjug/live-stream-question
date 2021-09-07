@@ -60,7 +60,7 @@ commands:
       -
         type: exec
         component: centos-quarkus-maven
-        command: "./mvnw compile quarkus:dev"
+        command: "mvn compile quarkus:dev"
         workdir: ${CHE_PROJECTS_ROOT}/live-stream-question
   -
     name: Package Native
@@ -68,7 +68,7 @@ commands:
       -
         type: exec
         component: centos-quarkus-maven
-        command: "./mvnw package -Dnative -Dmaven.test.skip -Dquarkus.native.native-image-xmx=2G"
+        command: "mvn package -Dnative -Dmaven.test.skip -Dquarkus.native.native-image-xmx=2G"
         workdir: ${CHE_PROJECTS_ROOT}/live-stream-question
 
   -

@@ -12,7 +12,11 @@ function loadChat() {
 }
 
 function openSocket() {
-    const socket = new WebSocket('ws://' + window.location.host + '/chat');
+    let websocketprotocol = 'ws';
+    if(window.location.protocol.includes('https')){
+        websocketprotocol = 'wss';
+    }
+    const socket = new WebSocket(websocketprotocol+'://' + window.location.host + '/chat');
     socket.addEventListener('message', function (event) {
         const chatMessage = JSON.parse(event.data);
         liveChatList.append(createChatElement(chatMessage));
